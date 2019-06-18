@@ -1,6 +1,6 @@
 class NpsService
     def get_parks_by_state(state)
-        get_json("/api/v1/parks?stateCode=#{state}&api_key=#{ENV[NPS_API_KEY]}")
+        get_json("/api/v1/parks?stateCode=#{state}&api_key=#{ENV["NPS_API_KEY"]}")
     end 
 
     private 
@@ -17,4 +17,3 @@ class NpsService
     end 
 end 
 
-    # https://developer.nps.gov/api/v1/parks?stateCode=CO&api_key=ryG7X4Cz5M7VvZMndK3eAIFp3FZIJV3mFaDuyv5L
