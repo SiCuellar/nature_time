@@ -3,6 +3,10 @@ class NpsService
         get_json("/api/v1/parks?stateCode=#{state}&api_key=#{ENV["NPS_API_KEY"]}")
     end 
 
+    def get_campsites(park)
+        get_json("/api/v1/campgrounds?q=#{park}&api_key=#{ENV["NPS_API_KEY"]}")
+    end 
+
     private 
     
     def get_json(path)
