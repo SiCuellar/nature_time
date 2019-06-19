@@ -25,4 +25,20 @@ describe 'national_park_service service' do
             expect(park).to have_key(:name)
         end 
     end 
+
+    it 'can return campsites to a specific park' do 
+        campsites_list = NpsService.new.get_campsites("Grand Canyon")
+
+        # binding.pry
+        expect(campsites_list).to be_a(Hash)
+        expect(campsites_list).to have_key(:campsites)
+        expect(campsites_list).to have_key(:accessibility)
+        expect(campsites_list).to have_key(:directionsoverview)
+        expect(campsites_list).to have_key(:name)
+        expect(campsites_list).to have_key(:latLong)
+        expect(campsites_list).to have_key(:description)
+        expect(campsites_list).to have_key(:amenitites)
+        expect(campsites_list).to have_key(:parkCode)
+        expect(campsites_list).to have_key(:id)
+    end
 end 
