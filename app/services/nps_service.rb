@@ -7,6 +7,10 @@ class NpsService
         get_json("/api/v1/campgrounds?q=#{park}&api_key=#{ENV["NPS_API_KEY"]}")
     end 
 
+    def get_visitor_centers(park)
+        get_json("/api/v1/visitorcenters?q=#{park}&api_key=#{ENV["NPS_API_KEY"]:}")"
+    end 
+
     private 
     
     def get_json(path)
