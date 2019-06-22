@@ -37,8 +37,15 @@ describe 'national_park_service service' do
         expect(campsites_list[:data][0]).to have_key(:name)
         expect(campsites_list[:data][0]).to have_key(:latLong)
         expect(campsites_list[:data][0]).to have_key(:description)
-        # expect(campsites_list[:data][0]).to have_key(:amenitites)
         expect(campsites_list[:data][0]).to have_key(:parkCode)
         expect(campsites_list[:data][0]).to have_key(:id)
+    end
+
+    it 'can return visitor centers for a specific park' do
+        visitor_centers = NpsService.new.get_visitor_centers("Grand Canyon")
+
+        expect(visitor_centers).to be_a(Hash)
+
+    
     end
 end 
