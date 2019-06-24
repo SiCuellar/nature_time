@@ -45,7 +45,13 @@ describe 'national_park_service service' do
         visitor_centers = NpsService.new.get_visitor_centers("Grand Canyon")
 
         expect(visitor_centers).to be_a(Hash)
-
-    
+        expect(visitor_centers[:data][0]).to have_key(:latLong)
+        expect(visitor_centers[:data][0]).to have_key(:description)
+        expect(visitor_centers[:data][0]).to have_key(:parkCode)
+        expect(visitor_centers[:data][0]).to have_key(:id)
+        expect(visitor_centers[:data][0]).to have_key(:directionsInfo)
+        expect(visitor_centers[:data][0]).to have_key(:directionsUrl)
+        expect(visitor_centers[:data][0]).to have_key(:url)
+        expect(visitor_centers[:data][0]).to have_key(:name)
     end
 end 
